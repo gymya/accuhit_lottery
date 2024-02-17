@@ -27,12 +27,17 @@
 
   const submit = handleSubmit(async () => {
     try {
-      await login({ account: account.value, password: password.value }, {})
+      const user = await login(
+        { account: account.value, password: password.value },
+        {}
+      )
+      console.log('user:', user)
       $q.notify({
         type: 'positive',
         message: '登入成功',
         timeout: 100
       })
+      baseStore.setUser(user.email)
       router.replace({ name: 'Home' })
     } catch (error) {
       $q.notify({
@@ -44,14 +49,14 @@
 </script>
 
 <template>
-  <div class="abs-center text-center min-w-56 max-w-72 w-1/2">
-    <h1 class="mb-12 text-xl text-primary font-bold">登入系統</h1>
+  <div class="abs-center w-1/2 min-w-56 max-w-72 text-center">
+    <h1 class="mb-12 text-xl font-bold text-primary">登入系統</h1>
     <q-input
       bottom-slots
       v-model="account"
       label="帳號"
       :error="!!errors.account"
-      maxlength="12"
+      maxlength="50"
     >
       <template v-slot:before>
         <q-icon name="person" color="primary" />
@@ -66,7 +71,7 @@
       label="密碼"
       :type="passwordShow ? 'text' : 'password'"
       :error="!!errors.password"
-      maxlength="12"
+      maxlength="50"
     >
       <template v-slot:before>
         <q-icon name="key" color="primary" />
