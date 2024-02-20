@@ -12,10 +12,6 @@
   const baseStore = useBaseStore()
 
   const { handleSubmit, errors, useFieldModel } = useForm({
-    initialValues: {
-      account: 'abc123',
-      password: 'gjwij2i3jti'
-    },
     validationSchema: yupObject({
       account: yupString().required('請填寫帳號'),
       password: yupString().required('請填寫密碼')

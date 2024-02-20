@@ -1,7 +1,7 @@
 <script setup>
   import { ref, onBeforeMount, reactive } from 'vue'
   import { sampleSize, isEmpty } from 'lodash'
-  import { useQuasar } from 'quasar'
+  import { useQuasar, QSpinnerHearts } from 'quasar'
   import { useBaseStore } from '@/stores/base'
   import {
     getLotteryConfig,
@@ -56,7 +56,8 @@
     $q.loading.show({
       backgroundColor: 'primary',
       spinnerSize: 60,
-      customClass: 'draw-loading'
+      customClass: 'draw-loading',
+      spinner: QSpinnerHearts
     })
   }
   const finishDrawLoading = (callback) => {
@@ -144,14 +145,13 @@
 
             <q-item-section>
               <p class="text-lg font-medium text-secondary">
-                <!-- {{ reward.name }} -->
+                {{ reward.name }}
               </p>
             </q-item-section>
           </template>
           <q-card>
             <q-card-section>
-              <!-- <div class="text-base">{{ reward.name }}</div>
-              <p>{{ reward.quantity }}</p> -->
+              <!-- <div class="text-base">{{ reward.name }}</div> -->
               <p class="text-base">獎金 ${{ reward.amount }}</p>
               <p class="text-base">
                 一次抽出 {{ reward.drawQty }} 人，共 {{ reward.quantity }} 人
@@ -171,7 +171,10 @@
               <p class="mb-2 mt-10 flex items-center text-base">
                 中獎名單
                 <q-btn
-                  v-if="result[reward.id]?.length !== reward.quantity"
+                  v-if="
+                    !baseStore.isAdmin &&
+                    result[reward.id]?.length !== reward.quantity
+                  "
                   outline
                   round
                   color="primary"
