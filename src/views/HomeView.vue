@@ -1,133 +1,111 @@
 <script setup>
-  import { ref, onBeforeMount, reactive } from 'vue'
+  import { reactive } from 'vue'
   import { sampleSize, isEmpty } from 'lodash'
-  import { useQuasar, QSpinnerHearts } from 'quasar'
-  import { useBaseStore } from '@/stores/base'
+  import { useQuasar } from 'quasar'
+  import confetti from 'canvas-confetti'
   import {
-    getLotteryConfig,
     getLotteryPool,
     getLotteryResult,
     updateLotteryResult
   } from '@/apis/base'
+  import { config, pool } from '@/data'
+  import Drum from '@/assets/drum.mp4'
+  import Award from '@/assets/award.mp4'
 
-  const $q = useQuasar()
-  const baseStore = useBaseStore()
-  console.log('baseStore.isAdmin:', baseStore.isAdmin)
-
-  const config = ref({})
-  const getConfig = async () => {
-    try {
-      const result = await getLotteryConfig()
-      console.log('getConfig:', result)
-      config.value = result
-    } catch (error) {}
+  if (!localStorage.getItem('lotteryStart')) {
+    localStorage.setItem('lotteryPool', JSON.stringify(pool))
   }
 
-  onBeforeMount(async () => {
-    $q.loading.show({
-      backgroundColor: 'primary',
-      spinnerSize: 60
-    })
-    await getConfig()
-    $q.loading.hide()
-  })
+  const $q = useQuasar()
 
   const result = reactive({})
-  const getResult = async (rewardId) => {
-    // console.log('getResult', rewardId)
-    if (result[rewardId]?.length === config.value[rewardId].quantity) return
+  const getResult = (rewardId) => {
+    if (result[rewardId]?.length === config[rewardId].quantity) return
     try {
-      const res = await getLotteryResult({
+      const res = getLotteryResult({
         rewardId,
-        poolType: config.value[rewardId].pool
+        poolType: config[rewardId].pool
       })
       result[rewardId] = res
     } catch (error) {}
   }
+
+  const drumAudio = new Audio(Drum)
+  const AwardAudio = new Audio(Award)
 
   const dialog = reactive({
     show: false,
     title: null,
     content: []
   })
-  const drawStartTime = ref(null)
-  const showDrawLoading = () => {
-    drawStartTime.value = Date.now()
+  const drawLottery = (rewardId) => {
+    localStorage.setItem('lotteryStart', true)
+    if (result[rewardId]?.length === config[rewardId].quantity) return
+
+    drumAudio.play()
     $q.loading.show({
-      backgroundColor: 'primary',
-      spinnerSize: 60,
+      spinnerSize: 0,
       customClass: 'draw-loading',
-      spinner: QSpinnerHearts
+      message: `<img src="https://media.tenor.com/kmHEH_VM-y4AAAAM/spy-x-family-spy-family.gif" alt="" style="margin: auto; width: 450px" /><p style="font-size: 3.75rem; font-weight: 600; color: #fff; margin-top: 20px;">${config[rewardId].name} 抽獎中...</p>`,
+      html: true
     })
-  }
-  const finishDrawLoading = (callback) => {
-    const elapsedTime = Date.now() - drawStartTime.value
-    const minDuration = 5000
-    if (elapsedTime < minDuration) {
-      setTimeout(() => {
-        callback()
-      }, minDuration - elapsedTime)
-    } else {
-      callback()
-    }
-  }
 
-  const drawLottery = async (rewardId) => {
-    if (result[rewardId]?.length === config.value[rewardId].quantity) return
-
-    showDrawLoading()
     let winners = []
     try {
-      const result = await getLotteryPool({
-        poolType: config.value[rewardId].pool
+      const result = getLotteryPool({
+        poolType: config[rewardId].pool
       })
-      console.log('poolType', config.value[rewardId].pool)
-      console.log('getLotteryPool result:', result)
       // Gets n random elements at unique keys from collection up to the size of collection.
       // [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
       // https://github.com/lodash/lodash/blob/main/src/sampleSize.ts
-      console.log(
-        'rewardId:',
-        rewardId,
-        ', drawQty:',
-        config.value[rewardId].drawQty
-      )
-      winners = sampleSize(result, config.value[rewardId].drawQty).map(
-        (el) => ({ ...el, rewardId })
-      )
-      console.log('winners:', winners)
-      await updateLotteryResult({
-        poolType: config.value[rewardId].pool,
-        winners
-      })
+      winners = sampleSize(result, config[rewardId].drawQty).map((el) => ({
+        ...el,
+        rewardId
+      }))
     } catch (error) {
-      console.log('error:', error)
       $q.notify({
         type: 'negative',
         message: '抽獎失敗，請重新抽獎'
       })
     }
 
-    await getResult(rewardId)
-    finishDrawLoading(() => {
+    setTimeout(() => {
+      AwardAudio.play()
+
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 },
+        zIndex: 6001
+      })
+
       $q.loading.hide()
       dialog.show = true
-      dialog.title = config.value[rewardId].name
+      dialog.title = config[rewardId].name
       dialog.content = winners
-    })
+
+      updateLotteryResult({
+        poolType: config[rewardId].pool,
+        winners
+      })
+      getResult(rewardId)
+    }, 3500)
   }
 </script>
 
 <template>
   <main class="mt-12">
-    <!-- <q-inner-loading :showing="isEmpty(config)">
-      <q-spinner-gears size="50px" color="primary" />
-    </q-inner-loading> -->
     <h1
       class="mx-auto flex w-fit items-end rounded-md bg-white px-5 py-3 text-center text-xl font-bold text-primary"
     >
       <img src="@/assets/logo.ico" alt="" class="mr-4 inline" />
       春酒抽獎名單
+      <!-- <q-btn
+        label="匯出"
+        color="secondary"
+        @click="logoutHandler"
+        class="fixed bottom-1 left-1"
+      /> -->
     </h1>
     <div class="mx-auto my-12 w-4/5 min-w-80 max-w-7xl">
       <q-list v-if="!isEmpty(config)" bordered class="rounded-borders">
@@ -157,10 +135,7 @@
                 一次抽出 {{ reward.drawQty }} 人，共 {{ reward.quantity }} 人
               </p>
               <q-btn
-                v-if="
-                  baseStore.isAdmin &&
-                  result[reward.id]?.length !== reward.quantity
-                "
+                v-if="result[reward.id]?.length !== reward.quantity"
                 label="抽獎"
                 color="primary"
                 padding="xs md"
@@ -169,20 +144,7 @@
                 class="mt-2"
               />
               <p class="mb-2 mt-10 flex items-center text-base">
-                中獎名單
-                <q-btn
-                  v-if="
-                    !baseStore.isAdmin &&
-                    result[reward.id]?.length !== reward.quantity
-                  "
-                  outline
-                  round
-                  color="primary"
-                  icon="sync"
-                  size="xs"
-                  @click="getResult(reward.id)"
-                  class="ml-2"
-                />
+                中獎名單 已抽出 {{ result[reward.id]?.length || 0 }} 人
               </p>
               <div>
                 <q-chip
@@ -192,6 +154,7 @@
                   color="primary"
                   text-color="white"
                   square
+                  size="lg"
                 >
                   {{ person.dept }} {{ person.name }}
                 </q-chip>
@@ -205,7 +168,9 @@
   <q-dialog v-model="dialog.show">
     <q-card class="w-[80vw]">
       <q-card-section class="row q-pb-none items-center">
-        <div class="text-h6">{{ dialog.title }}</div>
+        <div class="text-h6">
+          {{ dialog.title }} <span class="text-secondary">恭喜中獎！</span>
+        </div>
         <q-space />
         <q-btn icon="close" flat round dense v-close-popup />
       </q-card-section>
@@ -217,6 +182,7 @@
           color="primary"
           text-color="white"
           square
+          size="xl"
         >
           {{ person.dept }} {{ person.name }}
         </q-chip>
@@ -226,17 +192,13 @@
 </template>
 
 <style lang="scss">
-  body {
-    // @apply bg-primary;
-  }
-
   .draw-loading {
     .q-loading__backdrop {
-      opacity: 1;
+      @apply bg-[#07285d] opacity-100;
     }
-  }
 
-  .q-dialog__backdrop {
-    background: rgba(0, 0, 0, 0.85);
+    .q-loading__box {
+      @apply max-w-none;
+    }
   }
 </style>

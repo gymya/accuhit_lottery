@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "1.16.9",
+    "canvas-confetti": "1.9.2",
     "firebase": "10.8.0",
     "lodash": "4.17.21",
     "pinia": "2.1.7",
