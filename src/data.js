@@ -10,7 +10,7 @@ export const lotteryConfig = [
   },
   {
     amount: 8000,
-    drawQty: 2,
+    drawQty: 1,
     id: 1,
     name: '一獎',
     pool: 'all',
