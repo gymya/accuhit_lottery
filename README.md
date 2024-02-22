@@ -33,14 +33,3 @@ npm run build
 ```sh
 npm run lint
 ```
-
-<br/>
-
-<br/>
-
-- 權限
-- api
-- https://blog.logrocket.com/authentication-vue-3-firebase/
-- https://learnvue.co/articles/vue-firebase-authentication#setting-up-our-firebase-project
-- https://ithelp.ithome.com.tw/articles/10206354
-- https://medium.com/@globelex65/%E7%AD%86%E8%A8%98-%E6%B4%97%E7%89%8C%E6%BC%94%E7%AE%97%E6%B3%95-fisher-yates-shuffle-c9feeb463154
