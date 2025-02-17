@@ -61,7 +61,7 @@
     $q.loading.show({
       spinnerSize: 0,
       customClass: 'draw-loading',
-      message: `<img src="https://media.tenor.com/kmHEH_VM-y4AAAAM/spy-x-family-spy-family.gif"  class="mx-auto w-[450px]" /><p class="animate-bounce mt-12 text-6xl font-semibold text-white">${config.value[rewardId].name} 抽獎中...</p>`,
+      message: `<img src="https://media1.tenor.com/m/2OA-uQTBCBQAAAAd/detective-conan-case-closed.gif"  class="mx-auto w-[450px]" /><p class="animate-bounce mt-12 text-6xl font-semibold text-white">${config.value[rewardId].name} 抽獎中...</p>`,
       html: true
     })
 
@@ -171,95 +171,101 @@
 </script>
 
 <template>
-  <main class="mt-12">
-    <h1
-      @click="clickHandler"
-      class="mx-auto flex w-fit items-end rounded-md bg-white px-5 py-3 text-center text-xl font-bold text-primary"
-    >
-      <img src="@/assets/logo.ico" alt="" class="mr-4 inline" />
-      2024 愛酷春酒
-    </h1>
-    <div class="mx-auto my-12 w-4/5 min-w-80 max-w-7xl">
-      <div class="mb-4 text-right">
-        <q-btn
-          label="匯出總中獎名單"
-          color="secondary"
-          @click="downloadResult"
-        />
-      </div>
-      <q-list v-if="!isEmpty(config)" bordered class="rounded-borders">
-        <q-expansion-item
-          expand-separator
-          v-for="reward in config"
-          :key="reward.id"
-          :name="reward.id"
-          :id="`result-${reward.id}`"
-          @before-show="getResult(reward.id)"
-        >
-          <template v-slot:header>
-            <q-item-section avatar>
-              <q-icon color="primary" name="stars" />
-            </q-item-section>
+  <main class="bg-primary">
+    <div class="h-full min-h-screen bg-[url(@/assets/bg.png)] py-12">
+      <h1
+        @click="clickHandler"
+        class="mx-auto flex w-fit items-end rounded-md px-5 py-3 text-center text-3xl font-bold text-secondary"
+      >
+        <img src="@/assets/logo.ico" alt="" class="mr-4 inline" />
+        2025 愛酷春酒 酷偵探的神秘午宴
+      </h1>
+      <div class="mx-auto w-4/5 min-w-80 max-w-7xl">
+        <div class="mb-4 text-right">
+          <q-btn
+            label="匯出總中獎名單"
+            color="secondary"
+            text-color="dark"
+            @click="downloadResult"
+          />
+        </div>
+        <q-list v-if="!isEmpty(config)" bordered class="rounded-borders">
+          <q-expansion-item
+            expand-separator
+            v-for="reward in config"
+            :key="reward.id"
+            :name="reward.id"
+            :id="`result-${reward.id}`"
+            header-class="bg-secondary"
+            @before-show="getResult(reward.id)"
+          >
+            <template v-slot:header>
+              <q-item-section avatar>
+                <q-icon color="primary" name="stars" />
+              </q-item-section>
 
-            <q-item-section>
-              <p class="text-lg font-medium text-secondary">
-                {{ reward.name }}
-              </p>
-            </q-item-section>
-          </template>
-          <q-card>
-            <q-card-section>
-              <p class="text-base">獎金 ${{ reward.amount }}</p>
-              <p class="text-base">
-                一次抽出 {{ reward.drawQty }} 人，共 {{ reward.quantity }} 人
-              </p>
-              <q-btn
-                v-if="result[reward.id]?.length !== reward.quantity"
-                label="抽獎"
-                color="primary"
-                padding="xs md"
-                size="md"
-                @click="drawLottery(reward.id)"
-                class="mt-2"
-              />
-              <p class="mb-2 mt-10 flex items-center text-base">
-                中獎名單 已抽出 {{ result[reward.id]?.length || 0 }} 人
+              <q-item-section>
+                <p class="text-dark text-lg font-medium">
+                  {{ reward.name }}
+                </p>
+              </q-item-section>
+            </template>
+            <q-card>
+              <q-card-section>
+                <p class="text-dark text-xl">
+                  獎金<span class="text-accent"> ${{ reward.amount }} </span>
+                </p>
+                <p class="text-dark">
+                  一次抽出 {{ reward.drawQty }} 人，共 {{ reward.quantity }} 人
+                </p>
                 <q-btn
-                  v-if="result[reward.id]?.length === reward.quantity"
-                  outline
-                  round
+                  v-if="result[reward.id]?.length !== reward.quantity"
+                  label="🎉抽獎🎉"
                   color="primary"
-                  icon="download"
-                  size="sm"
-                  @click="downloadRewardImage(reward.id)"
-                  class="ml-2"
-                  data-html2canvas-ignore
-                />
-              </p>
-              <div>
-                <q-chip
-                  v-for="person in result[reward.id]"
-                  :key="person.empId"
-                  outline
-                  color="primary"
-                  text-color="white"
-                  square
+                  padding="md"
                   size="lg"
-                >
-                  {{ person.dept }} {{ person.name }}
-                </q-chip>
-              </div>
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-      </q-list>
+                  @click="drawLottery(reward.id)"
+                  class="mt-2 w-full"
+                />
+                <p class="text-dark mb-2 mt-10 flex items-center">
+                  中獎名單 已抽出 {{ result[reward.id]?.length || 0 }} 人
+                  <q-btn
+                    v-if="result[reward.id]?.length === reward.quantity"
+                    outline
+                    round
+                    color="primary"
+                    icon="download"
+                    size="sm"
+                    @click="downloadRewardImage(reward.id)"
+                    class="ml-2"
+                    data-html2canvas-ignore
+                  />
+                </p>
+                <div>
+                  <q-chip
+                    v-for="person in result[reward.id]"
+                    :key="person.empId"
+                    outline
+                    color="primary"
+                    text-color="white"
+                    square
+                    size="lg"
+                  >
+                    {{ person.dept }} {{ person.name }}
+                  </q-chip>
+                </div>
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </q-list>
+      </div>
     </div>
   </main>
   <q-dialog v-model="dialog.show">
     <q-card class="w-[80vw]">
       <q-card-section class="row q-pb-none items-center">
-        <div class="text-h6">
-          {{ dialog.title }} <span class="text-secondary">恭喜中獎！</span>
+        <div class="text-h6 text-accent">
+          {{ dialog.title }} <span class="text-primary">恭喜中獎！</span>
         </div>
         <q-space />
         <q-btn icon="close" flat round dense v-close-popup />
