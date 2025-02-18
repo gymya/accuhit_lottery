@@ -12,7 +12,7 @@ export const lotteryConfig = [
     amount: 8000,
     drawQty: 2,
     id: 1,
-    name: '一獎',
+    name: '壹獎',
     pool: 'all',
     quantity: 2,
     surprise: false
@@ -21,31 +21,31 @@ export const lotteryConfig = [
     amount: 5000,
     drawQty: 5,
     id: 2,
-    name: '二獎',
+    name: '貳獎',
     pool: 'all',
     quantity: 5,
     surprise: false
   },
   {
     amount: 3000,
-    drawQty: 6,
+    drawQty: 10,
     id: 3,
-    name: '三獎',
+    name: '參獎',
     pool: 'all',
-    quantity: 12,
+    quantity: 10,
     surprise: false
   },
   {
-    amount: 2000,
-    drawQty: 10,
+    amount: 1500,
+    drawQty: 15,
     id: 4,
     name: '肆獎',
     pool: 'all',
-    quantity: 30,
+    quantity: 15,
     surprise: false
   },
   {
-    amount: 1000,
+    amount: 600,
     drawQty: 8,
     id: 5,
     name: '愛酷獎',
@@ -54,7 +54,7 @@ export const lotteryConfig = [
     surprise: false
   },
   {
-    amount: 3000,
+    amount: 1600,
     drawQty: 10,
     id: 6,
     name: '加碼獎',

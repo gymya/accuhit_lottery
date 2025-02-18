@@ -172,7 +172,19 @@
 
 <template>
   <main class="bg-primary">
-    <div class="h-full min-h-screen bg-[url(@/assets/bg.png)] py-12">
+    <div
+      class="relative h-full min-h-screen bg-[url(@/assets/bg.png)] bg-[length:120px_120px] bg-repeat py-12"
+    >
+      <img
+        src="@/assets/finger.png"
+        alt=""
+        class="absolute -left-12 top-24 w-[10%] rotate-45"
+      />
+      <img
+        src="@/assets/finger.png"
+        alt=""
+        class="absolute -right-2 bottom-24 w-[10%] -rotate-45"
+      />
       <h1
         @click="clickHandler"
         class="mx-auto flex w-fit items-end rounded-md px-5 py-3 text-center text-3xl font-bold text-secondary"
