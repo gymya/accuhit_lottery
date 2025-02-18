@@ -1,6 +1,6 @@
 <script setup>
   import { reactive, ref } from 'vue'
-  import { sampleSize, isEmpty, forEach, filter } from 'lodash'
+  import { sampleSize, isEmpty, forEach, filter, find } from 'lodash'
   import { useQuasar } from 'quasar'
   import confetti from 'canvas-confetti'
   import html2canvas from 'html2canvas'
@@ -37,10 +37,11 @@
 
   const result = reactive({})
   const getResult = (rewardId) => {
-    if (result[rewardId]?.length === config.value[rewardId].quantity) return
+    const match = find(config.value, ['id', rewardId])
+    if (result[rewardId]?.length === match.quantity) return
     const res = getLotteryResult({
       rewardId,
-      poolType: config.value[rewardId].pool
+      poolType: match.pool
     })
     result[rewardId] = res
   }
@@ -54,28 +55,30 @@
     content: []
   })
   const drawLottery = (rewardId) => {
-    if (result[rewardId]?.length === config.value[rewardId].quantity) return
+    const match = find(config.value, ['id', rewardId])
+    if (result[rewardId]?.length === match.quantity) return
     localStorage.setItem('lotteryStart', true)
 
     drumAudio.play()
     $q.loading.show({
       spinnerSize: 0,
       customClass: 'draw-loading',
-      message: `<img src="https://media1.tenor.com/m/2OA-uQTBCBQAAAAd/detective-conan-case-closed.gif"  class="mx-auto w-[450px]" /><p class="animate-bounce mt-12 text-6xl font-semibold text-white">${config.value[rewardId].name} 抽獎中...</p>`,
+      message: `<img src="https://media1.tenor.com/m/2OA-uQTBCBQAAAAd/detective-conan-case-closed.gif"  class="mx-auto w-[450px]" /><p class="animate-bounce mt-12 text-6xl font-semibold text-white">${match.name} 抽獎中...</p>`,
       html: true
     })
 
     // drawQty 無法被 quantity 整除的獎項，最後一次抽獎的數量只抽剩餘數量
     const drawQty = Math.min(
-      config.value[rewardId].drawQty,
-      config.value[rewardId].quantity - result[rewardId].length
+      match.drawQty,
+      match.quantity - result[rewardId].length
     )
 
     let winners = []
     try {
       const pool = getLotteryPool({
-        poolType: config.value[rewardId].pool
+        poolType: match.pool
       })
+
       // Gets n random elements at unique keys from collection up to the size of collection.
       // [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
       // https://github.com/lodash/lodash/blob/main/src/sampleSize.ts
@@ -103,11 +106,11 @@
 
       $q.loading.hide()
       dialog.show = true
-      dialog.title = config.value[rewardId].name
+      dialog.title = match.name
       dialog.content = winners
 
       updateLotteryResult({
-        poolType: config.value[rewardId].pool,
+        poolType: match.pool,
         winners
       })
       getResult(rewardId)
@@ -116,11 +119,12 @@
   }
 
   const downloadRewardImage = async (rewardId) => {
+    const match = find(config.value, ['id', rewardId])
     const canvas = await html2canvas(
       document.querySelector(`#result-${rewardId}`)
     )
     const link = document.createElement('a')
-    link.download = `2024_愛酷春酒_${config.value[rewardId].name}_中獎名單.png`
+    link.download = `2024_愛酷春酒_${match.name}_中獎名單.png`
     link.href = canvas.toDataURL('image/png')
     link.click()
   }
@@ -309,5 +313,9 @@
     .q-loading__box {
       @apply max-w-none;
     }
+  }
+
+  .q-dialog__inner--minimized > div {
+    max-width: 80%;
   }
 </style>

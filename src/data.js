@@ -1,29 +1,11 @@
 export const lotteryConfig = [
   {
-    amount: 10000,
-    drawQty: 1,
-    id: 0,
-    name: '頭獎',
+    amount: 1500,
+    drawQty: 15,
+    id: 4,
+    name: '肆獎',
     pool: 'all',
-    quantity: 1,
-    surprise: false
-  },
-  {
-    amount: 8000,
-    drawQty: 2,
-    id: 1,
-    name: '壹獎',
-    pool: 'all',
-    quantity: 2,
-    surprise: false
-  },
-  {
-    amount: 5000,
-    drawQty: 5,
-    id: 2,
-    name: '貳獎',
-    pool: 'all',
-    quantity: 5,
+    quantity: 15,
     surprise: false
   },
   {
@@ -36,21 +18,39 @@ export const lotteryConfig = [
     surprise: false
   },
   {
-    amount: 1500,
-    drawQty: 15,
-    id: 4,
-    name: '肆獎',
+    amount: 5000,
+    drawQty: 5,
+    id: 2,
+    name: '貳獎',
     pool: 'all',
-    quantity: 15,
+    quantity: 5,
+    surprise: false
+  },
+  {
+    amount: 8000,
+    drawQty: 2,
+    id: 1,
+    name: '壹獎',
+    pool: 'all',
+    quantity: 2,
+    surprise: false
+  },
+  {
+    amount: 10000,
+    drawQty: 1,
+    id: 0,
+    name: '頭獎',
+    pool: 'all',
+    quantity: 1,
     surprise: false
   },
   {
     amount: 600,
-    drawQty: 8,
+    drawQty: 14,
     id: 5,
     name: '愛酷獎',
     pool: 'all',
-    quantity: 15,
+    quantity: 28,
     surprise: false
   },
   {
