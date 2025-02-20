@@ -50,7 +50,7 @@ export const lotteryConfig = [
     id: 5,
     name: '愛酷獎',
     pool: 'all',
-    quantity: 24,
+    quantity: 23,
     surprise: false
   },
   {
@@ -564,12 +564,6 @@ export const pool = {
       empId: 'A0189',
       name: '陳薏而 Geer Chen',
       dept: '品牌客戶營運部',
-      rewardId: null
-    },
-    A0194: {
-      empId: 'A0194',
-      name: '廖玉燕',
-      dept: '夥伴與文化發展部',
       rewardId: null
     },
     A0197: {
