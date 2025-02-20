@@ -46,11 +46,11 @@ export const lotteryConfig = [
   },
   {
     amount: 600,
-    drawQty: 14,
+    drawQty: 12,
     id: 5,
     name: '愛酷獎',
     pool: 'all',
-    quantity: 28,
+    quantity: 24,
     surprise: false
   },
   {
@@ -67,653 +67,533 @@ export const lotteryConfig = [
 export const pool = {
   all: {
     A0004: {
-      dept: '財務部',
       empId: 'A0004',
       name: '鄭淑芳 Lily',
+      dept: '財務部',
       rewardId: null
     },
     A0007: {
-      dept: '財務部',
       empId: 'A0007',
       name: '程俐涵 Melody',
+      dept: '財務部',
       rewardId: null
     },
     A0010: {
-      dept: '商務拓展組',
       empId: 'A0010',
       name: '林家暄 Chantal',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0013: {
-      dept: 'AccuCDP營運部',
       empId: 'A0013',
       name: '張皓博 Jeff',
-      rewardId: null
-    },
-    A0014: {
-      dept: '專案研發科技部',
-      empId: 'A0014',
-      name: '曾詩婷 Jean Tseng',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0019: {
-      dept: 'AccuNix營運部',
       empId: 'A0019',
       name: '許煒駿 Alan Hsu',
-      rewardId: null
-    },
-    A0021: {
-      dept: '商務拓展組',
-      empId: 'A0021',
-      name: '張譽騰 Jason Chang',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0022: {
-      dept: '商務拓展組',
       empId: 'A0022',
       name: '蕭惟元 William Hsiao',
-      rewardId: null
-    },
-    A0030: {
-      dept: '商務長室CBO',
-      empId: 'A0030',
-      name: '陳楷文 Kevin',
-      rewardId: null
-    },
-    A0037: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0037',
-      name: '何孟輯 Marc Ho',
+      dept: '產品行銷部',
       rewardId: null
     },
     A0039: {
-      dept: 'AccuNix營運部',
       empId: 'A0039',
       name: '陳薇宇 Karen',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0044: {
-      dept: '專案研發科技部',
       empId: 'A0044',
       name: '陳建宇 James',
+      dept: '專案管理部',
       rewardId: null
     },
     A0052: {
-      dept: '財務部',
       empId: 'A0052',
       name: '李思蓁 Kelly',
+      dept: '財務部',
       rewardId: null
     },
     A0059: {
-      dept: 'AccuNix營運部',
       empId: 'A0059',
       name: '陳佳瑋 Tom Chen',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0078: {
-      dept: '雲端架構暨技術研發部',
       empId: 'A0078',
       name: '闕源辰 Ethan',
+      dept: '雲端架構部',
       rewardId: null
     },
     A0084: {
-      dept: 'AccuNix營運部',
       empId: 'A0084',
       name: '陳耀峰 Bob Cheng',
-      rewardId: null
-    },
-    A0087: {
-      dept: 'AccuNix營運部',
-      empId: 'A0087',
-      name: '林耕荷 Cindy Lin',
-      rewardId: null
-    },
-    A0093: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0093',
-      name: '許項涵 Shawn',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0100: {
-      dept: 'AccuCDP營運部',
       empId: 'A0100',
-      name: '楊秉叡 Benny Yang',
-      rewardId: null
-    },
-    A0103: {
-      dept: 'AccuNix營運部',
-      empId: 'A0103',
-      name: '潘嘉豪 William',
-      rewardId: null
-    },
-    A0106: {
-      dept: '雲端服務事業部',
-      empId: 'A0106',
-      name: '高瑋伸 Wilson Kao',
+      name: '楊秉樺 Benny Yang',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0110: {
-      dept: 'AccuNix營運部',
       empId: 'A0110',
       name: '姜偉 Willy',
-      rewardId: null
-    },
-    A0115: {
-      dept: '通路拓展組',
-      empId: 'A0115',
-      name: '黃家俊 Albert',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0116: {
-      dept: '雲端產品組',
       empId: 'A0116',
       name: '朱育弘 Ben',
+      dept: '業務二處（數轉中心）',
       rewardId: null
     },
     A0117: {
-      dept: 'AccuNix營運部',
       empId: 'A0117',
       name: '蕭竹庭 Ting Hsiao',
-      rewardId: null
-    },
-    A0118: {
-      dept: '通路拓展組',
-      empId: 'A0118',
-      name: '温是璠 Ada Wen',
-      rewardId: null
-    },
-    A0126: {
-      dept: '品牌客戶營運組',
-      empId: 'A0126',
-      name: '郭柏彣 Doris Kuo',
-      rewardId: null
-    },
-    A0128: {
-      dept: '公關行銷組',
-      empId: 'A0128',
-      name: '朱昱僑 Jo Chu',
-      rewardId: null
-    },
-    A0125: {
-      dept: '公共事業組',
-      empId: 'A0125',
-      name: '李建霖 Bruno Lee',
-      rewardId: null
-    },
-    A0130: {
-      dept: '夥伴與文化發展部',
-      empId: 'A0130',
-      name: '郭淳玉 Ariel Kuo',
+      dept: '客戶關係經營策略部',
       rewardId: null
     },
     A0132: {
-      dept: '商務拓展組',
       empId: 'A0132',
       name: '林瑞翔 Leo Lin',
+      dept: '業務一處（商業拓展）',
       rewardId: null
     },
     A0135: {
-      dept: '品牌客戶營運組',
       empId: 'A0135',
       name: '黃家儀 Emily Huang',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0137: {
-      dept: '品牌客戶營運組',
       empId: 'A0137',
       name: '陳慧婷 Queena Chen',
-      rewardId: null
-    },
-    A0143: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0143',
-      name: '王奕崴 Casper Wang',
-      rewardId: null
-    },
-    A0142: {
-      dept: '通路拓展組',
-      empId: 'A0142',
-      name: '林念慈 Stacy',
-      rewardId: null
-    },
-    A0147: {
-      dept: '專案研發科技部',
-      empId: 'A0147',
-      name: '徐偉庭 Alex Hsu',
-      rewardId: null
-    },
-    A0151: {
-      dept: '產品技術支援組',
-      empId: 'A0151',
-      name: '陳品升 Nick Chen',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0153: {
-      dept: '專案研發科技部',
       empId: 'A0153',
       name: '趙軒 Aaron Chao',
+      dept: '專案管理部',
       rewardId: null
     },
     A0154: {
-      dept: '專案研發科技部',
       empId: 'A0154',
       name: '葉昱君 Blair Yeh',
+      dept: '專案研發科技部',
       rewardId: null
     },
     A0158: {
-      dept: 'AccuCDP營運部',
       empId: 'A0158',
       name: '劉俊睿 Ray Liu',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0159: {
-      dept: '專案研發科技部',
       empId: 'A0159',
       name: '簡佳卉 Julia Chien',
+      dept: '專案管理部',
       rewardId: null
     },
     A0163: {
-      dept: '品牌客戶營運組',
       empId: 'A0163',
       name: '王子佳 Sandy Wang',
-      rewardId: null
-    },
-    A0168: {
-      dept: '雲端架構暨技術研發部',
-      empId: 'A0168',
-      name: '陳軒蓉 Sharon Chen',
-      rewardId: null
-    },
-    A0169: {
-      dept: '產品技術支援組',
-      empId: 'A0169',
-      name: '曹晉誠 Donald Tsao',
-      rewardId: null
-    },
-    A0171: {
-      dept: '產品技術支援組',
-      empId: 'A0171',
-      name: '黃婷郁 Melody Huang',
-      rewardId: null
-    },
-    A0172: {
-      dept: '專案研發科技部',
-      empId: 'A0172',
-      name: '袁菱 Zelda Yuan',
-      rewardId: null
-    },
-    A0175: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0175',
-      name: '熊方瑜 Belle Hsiung',
-      rewardId: null
-    },
-    A0176: {
-      dept: '雲端產品組',
-      empId: 'A0176',
-      name: '李欣樺 Karina Lee',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0177: {
-      dept: 'AccuCDP營運部',
       empId: 'A0177',
       name: '劉家齊 Leon Liu',
-      rewardId: null
-    },
-    A0178: {
-      dept: '品牌客戶營運組',
-      empId: 'A0178',
-      name: '游驥安 Alex Yu',
-      rewardId: null
-    },
-    A0179: {
-      dept: '商務拓展組',
-      empId: 'A0179',
-      name: '王馨平 Qunnie Wang',
-      rewardId: null
-    },
-    A0180: {
-      dept: '人工智慧應用部',
-      empId: 'A0180',
-      name: '劉力綱 Peter Liu',
-      rewardId: null
-    },
-    A0181: {
-      dept: '雲端產品組',
-      empId: 'A0181',
-      name: '廖怡瑄 Frida Liao',
-      rewardId: null
-    },
-    A0182: {
-      dept: '公共事業組',
-      empId: 'A0182',
-      name: '黃偉豪 Ethan Huang',
-      rewardId: null
-    },
-    A0183: {
-      dept: '公關行銷組',
-      empId: 'A0183',
-      name: '宋宜薇 Vill Sung',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0184: {
-      dept: '夥伴與文化發展部',
       empId: 'A0184',
       name: '張景琪 Emma Chang',
-      rewardId: null
-    },
-    A0186: {
-      dept: '體驗設計組',
-      empId: 'A0186',
-      name: '黃靖婷 Daisy Huang',
+      dept: '夥伴與文化發展部',
       rewardId: null
     },
     A0189: {
-      dept: '品牌客戶營運組',
       empId: 'A0189',
       name: '陳薏而 Geer Chen',
-      rewardId: null
-    },
-    A0192: {
-      dept: '體驗設計組',
-      empId: 'A0192',
-      name: '鍾伶雀 Cleo Chung',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0197: {
-      dept: '人工智慧應用部',
       empId: 'A0197',
       name: '李囿萱 Sophia Li',
+      dept: '業務一處（商業拓展）',
       rewardId: null
     },
     A0198: {
-      dept: 'AccuCDP營運部',
       empId: 'A0198',
       name: '黃志豪 Eddie Huang',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0200: {
-      dept: 'AccuCDP營運部',
       empId: 'A0200',
       name: '高柏弘 Albert Kao',
-      rewardId: null
-    },
-    A0201: {
-      dept: '公共事業組',
-      empId: 'A0201',
-      name: '陳妍安 Annie Chen',
-      rewardId: null
-    },
-    A0203: {
-      dept: '專案研發科技部',
-      empId: 'A0203',
-      name: '高執軒 Wayne Kao',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0204: {
-      dept: 'AccuCDP營運部',
       empId: 'A0204',
       name: '曹碩娟 Gwen Tsao',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0205: {
+      empId: 'A0205',
+      name: '林庭漢 Jim Lin',
+      dept: '專案研發科技部',
+      rewardId: null
+    },
+    A0207: {
+      empId: 'A0207',
+      name: '鄭博元 Neil Jheng',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0208: {
+      empId: 'A0208',
+      name: '林政 Ned Lin',
+      dept: 'AccuNix營運處',
+      rewardId: null
+    },
+    A0209: {
+      empId: 'A0209',
+      name: '陳東賢 Charlies Chen',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0210: {
+      empId: 'A0210',
+      name: '林祺傑 Cijie Lin',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0211: {
+      empId: 'A0211',
+      name: '卓亞萱 Amy Chuo',
+      dept: '產品行銷部',
+      rewardId: null
+    },
+    A0214: {
+      empId: 'A0214',
+      name: '張崑 Chris Chang',
+      dept: '業務二處（數轉中心）',
+      rewardId: null
+    },
+    A0215: {
+      empId: 'A0215',
+      name: '王峻哲 Benny Wang',
+      dept: '專案研發科技部',
+      rewardId: null
+    },
+    A0217: {
+      empId: 'A0217',
+      name: '張立瑞 Ryan Chang',
+      dept: '技術研發處',
+      rewardId: null
+    },
+    A0220: {
+      empId: 'A0220',
+      name: '林柏誠 Pedro Lin',
+      dept: '品牌客戶營運部',
+      rewardId: null
+    },
+    A0223: {
+      empId: 'A0223',
+      name: '陳薇心 Vinci Chen',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0224: {
+      empId: 'A0224',
+      name: '李芷螢 Alice Li',
+      dept: 'AccuNix營運處',
+      rewardId: null
+    },
+    A0225: {
+      empId: 'A0225',
+      name: '陳彥廷 Allen Chen',
+      dept: '通路拓展部',
+      rewardId: null
+    },
+    A0226: {
+      empId: 'A0226',
+      name: '廖婉茜 Cissy Liao',
+      dept: '產品行銷部',
+      rewardId: null
+    },
+    A0227: {
+      empId: 'A0227',
+      name: '陳勝彥 Sam Chen',
+      dept: '專案研發科技部',
+      rewardId: null
+    },
+    A0228: {
+      empId: 'A0228',
+      name: '蔡欣筠 Cherry Tsai',
+      dept: '品牌客戶營運部',
+      rewardId: null
+    },
+    A0229: {
+      empId: 'A0229',
+      name: '趙育誠 Zachary Zhao',
+      dept: '專案研發科技部',
+      rewardId: null
+    },
+    A0230: {
+      empId: 'A0230',
+      name: '王詩博 Louis Wang',
+      dept: '業務一處（商業拓展）',
+      rewardId: null
+    },
+    A0231: {
+      empId: 'A0231',
+      name: '李映萱 Peggy Lee',
+      dept: '業務一處（商業拓展）',
+      rewardId: null
+    },
+    A0232: {
+      empId: 'A0232',
+      name: '徐婉純 Amanda Hsu',
+      dept: '業務二處（數轉中心）',
+      rewardId: null
+    },
+    A0233: {
+      empId: 'A0233',
+      name: '廖御凱 Owen Liao',
+      dept: '業務一處（商業拓展）',
+      rewardId: null
+    },
+    A0234: {
+      empId: 'A0234',
+      name: '謝慈 Candice Hsieh',
+      dept: '公關行銷部',
+      rewardId: null
+    },
+    A0235: {
+      empId: 'A0235',
+      name: '陳冠如 Grace Chen',
+      dept: '體驗設計部',
+      rewardId: null
+    },
+    A0236: {
+      empId: 'A0236',
+      name: '張馨尹 Cindy Chang',
+      dept: '業務一處（商業拓展）',
+      rewardId: null
+    },
+    A0237: {
+      empId: 'A0237',
+      name: '周欣叡 Dely Chou',
+      dept: '夥伴與文化發展部',
       rewardId: null
     }
   },
   senior: {
     A0004: {
-      dept: '財務部',
       empId: 'A0004',
       name: '鄭淑芳 Lily',
+      dept: '財務部',
       rewardId: null
     },
     A0007: {
-      dept: '財務部',
       empId: 'A0007',
       name: '程俐涵 Melody',
+      dept: '財務部',
       rewardId: null
     },
     A0010: {
-      dept: '商務拓展組',
       empId: 'A0010',
       name: '林家暄 Chantal',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0013: {
-      dept: 'AccuCDP營運部',
       empId: 'A0013',
       name: '張皓博 Jeff',
-      rewardId: null
-    },
-    A0014: {
-      dept: '專案研發科技部',
-      empId: 'A0014',
-      name: '曾詩婷 Jean Tseng',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0019: {
-      dept: 'AccuNix營運部',
       empId: 'A0019',
       name: '許煒駿 Alan Hsu',
-      rewardId: null
-    },
-    A0021: {
-      dept: '商務拓展組',
-      empId: 'A0021',
-      name: '張譽騰 Jason Chang',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0022: {
-      dept: '商務拓展組',
       empId: 'A0022',
       name: '蕭惟元 William Hsiao',
-      rewardId: null
-    },
-    A0030: {
-      dept: '商務長室CBO',
-      empId: 'A0030',
-      name: '陳楷文 Kevin',
-      rewardId: null
-    },
-    A0037: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0037',
-      name: '何孟輯 Marc Ho',
+      dept: '產品行銷部',
       rewardId: null
     },
     A0039: {
-      dept: 'AccuNix營運部',
       empId: 'A0039',
       name: '陳薇宇 Karen',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0044: {
-      dept: '專案研發科技部',
       empId: 'A0044',
       name: '陳建宇 James',
+      dept: '專案管理部',
       rewardId: null
     },
     A0052: {
-      dept: '財務部',
       empId: 'A0052',
       name: '李思蓁 Kelly',
+      dept: '財務部',
       rewardId: null
     },
     A0059: {
-      dept: 'AccuNix營運部',
       empId: 'A0059',
       name: '陳佳瑋 Tom Chen',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0078: {
-      dept: '雲端架構暨技術研發部',
       empId: 'A0078',
       name: '闕源辰 Ethan',
+      dept: '雲端架構部',
       rewardId: null
     },
     A0084: {
-      dept: 'AccuNix營運部',
       empId: 'A0084',
       name: '陳耀峰 Bob Cheng',
-      rewardId: null
-    },
-    A0087: {
-      dept: 'AccuNix營運部',
-      empId: 'A0087',
-      name: '林耕荷 Cindy Lin',
-      rewardId: null
-    },
-    A0093: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0093',
-      name: '許項涵 Shawn',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0100: {
-      dept: 'AccuCDP營運部',
       empId: 'A0100',
-      name: '楊秉叡 Benny Yang',
-      rewardId: null
-    },
-    A0103: {
-      dept: 'AccuNix營運部',
-      empId: 'A0103',
-      name: '潘嘉豪 William',
-      rewardId: null
-    },
-    A0106: {
-      dept: '雲端服務事業部',
-      empId: 'A0106',
-      name: '高瑋伸 Wilson Kao',
+      name: '楊秉樺 Benny Yang',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0110: {
-      dept: 'AccuNix營運部',
       empId: 'A0110',
       name: '姜偉 Willy',
-      rewardId: null
-    },
-    A0115: {
-      dept: '通路拓展組',
-      empId: 'A0115',
-      name: '黃家俊 Albert',
+      dept: 'AccuNix營運處',
       rewardId: null
     },
     A0116: {
-      dept: '雲端產品組',
       empId: 'A0116',
       name: '朱育弘 Ben',
+      dept: '業務二處（數轉中心）',
       rewardId: null
     },
     A0117: {
-      dept: 'AccuNix營運部',
       empId: 'A0117',
       name: '蕭竹庭 Ting Hsiao',
-      rewardId: null
-    },
-    A0118: {
-      dept: '通路拓展組',
-      empId: 'A0118',
-      name: '温是璠 Ada Wen',
-      rewardId: null
-    },
-    A0126: {
-      dept: '品牌客戶營運組',
-      empId: 'A0126',
-      name: '郭柏彣 Doris Kuo',
-      rewardId: null
-    },
-    A0128: {
-      dept: '公關行銷組',
-      empId: 'A0128',
-      name: '朱昱僑 Jo Chu',
-      rewardId: null
-    },
-    A0125: {
-      dept: '公共事業組',
-      empId: 'A0125',
-      name: '李建霖 Bruno Lee',
-      rewardId: null
-    },
-    A0130: {
-      dept: '夥伴與文化發展部',
-      empId: 'A0130',
-      name: '郭淳玉 Ariel Kuo',
+      dept: '客戶關係經營策略部',
       rewardId: null
     },
     A0132: {
-      dept: '商務拓展組',
       empId: 'A0132',
       name: '林瑞翔 Leo Lin',
+      dept: '業務一處（商業拓展）',
       rewardId: null
     },
     A0135: {
-      dept: '品牌客戶營運組',
       empId: 'A0135',
       name: '黃家儀 Emily Huang',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0137: {
-      dept: '品牌客戶營運組',
       empId: 'A0137',
       name: '陳慧婷 Queena Chen',
-      rewardId: null
-    },
-    A0143: {
-      dept: 'AccuCDP營運部',
-      empId: 'A0143',
-      name: '王奕崴 Casper Wang',
-      rewardId: null
-    },
-    A0142: {
-      dept: '通路拓展組',
-      empId: 'A0142',
-      name: '林念慈 Stacy',
-      rewardId: null
-    },
-    A0147: {
-      dept: '專案研發科技部',
-      empId: 'A0147',
-      name: '徐偉庭 Alex Hsu',
-      rewardId: null
-    },
-    A0151: {
-      dept: '產品技術支援組',
-      empId: 'A0151',
-      name: '陳品升 Nick Chen',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
     A0153: {
-      dept: '專案研發科技部',
       empId: 'A0153',
       name: '趙軒 Aaron Chao',
+      dept: '專案管理部',
       rewardId: null
     },
     A0154: {
-      dept: '專案研發科技部',
       empId: 'A0154',
       name: '葉昱君 Blair Yeh',
+      dept: '專案研發科技部',
       rewardId: null
     },
     A0158: {
-      dept: 'AccuCDP營運部',
       empId: 'A0158',
       name: '劉俊睿 Ray Liu',
+      dept: 'AI暨數據應用部',
       rewardId: null
     },
     A0159: {
-      dept: '專案研發科技部',
       empId: 'A0159',
       name: '簡佳卉 Julia Chien',
+      dept: '專案管理部',
       rewardId: null
     },
     A0163: {
-      dept: '品牌客戶營運組',
       empId: 'A0163',
       name: '王子佳 Sandy Wang',
+      dept: '品牌客戶營運部',
       rewardId: null
     },
-    A0168: {
-      dept: '雲端架構暨技術研發部',
-      empId: 'A0168',
-      name: '陳軒蓉 Sharon Chen',
+    A0177: {
+      empId: 'A0177',
+      name: '劉家齊 Leon Liu',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0184: {
+      empId: 'A0184',
+      name: '張景琪 Emma Chang',
+      dept: '夥伴與文化發展部',
+      rewardId: null
+    },
+    A0189: {
+      empId: 'A0189',
+      name: '陳薏而 Geer Chen',
+      dept: '品牌客戶營運部',
+      rewardId: null
+    },
+    A0194: {
+      empId: 'A0194',
+      name: '廖玉燕',
+      dept: '夥伴與文化發展部',
+      rewardId: null
+    },
+    A0197: {
+      empId: 'A0197',
+      name: '李囿萱 Sophia Li',
+      dept: '業務一處（商業拓展）',
+      rewardId: null
+    },
+    A0198: {
+      empId: 'A0198',
+      name: '黃志豪 Eddie Huang',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0200: {
+      empId: 'A0200',
+      name: '高柏弘 Albert Kao',
+      dept: 'AI暨數據應用部',
+      rewardId: null
+    },
+    A0204: {
+      empId: 'A0204',
+      name: '曹碩娟 Gwen Tsao',
+      dept: 'AI暨數據應用部',
       rewardId: null
     }
   }
@@ -723,9 +603,23 @@ export const pool = {
 export const dayOffResult = [
   {
     rewardName: '(請假) 愛酷獎',
-    rewardAmount: 1000,
-    dept: '品牌客戶營運組',
-    empId: 'A0164',
-    name: '林姿佑 Yoan Lin'
+    rewardAmount: 600,
+    dept: '品牌客戶營運部',
+    empId: 'A0178',
+    name: '游驥安 Alex Yu'
+  },
+  {
+    rewardName: '(請假) 愛酷獎',
+    rewardAmount: 600,
+    dept: '產品經營整合處',
+    empId: 'A0216',
+    name: '林雨諄 Jed Lin'
+  },
+  {
+    rewardName: '(請假) 愛酷獎',
+    rewardAmount: 600,
+    dept: '客戶關係經營策略部',
+    empId: 'A0222',
+    name: '楊明燕 Jill Yang'
   }
 ]
