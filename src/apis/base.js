@@ -2,7 +2,7 @@ import { filter, values, forEach } from 'lodash'
 
 export const getLotteryPool = ({ poolType }) => {
   const data = JSON.parse(localStorage.getItem('lotteryPool'))
-  return filter(data[poolType], (item) => !item.rewardId)
+  return filter(data[poolType], (item) => item.rewardId === null)
 }
 
 export const getLotteryResult = ({ rewardId, poolType }) => {
